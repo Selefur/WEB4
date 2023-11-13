@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Моя веб-сторінка</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Інформація про студента</h1>
+        <p>Група: ТР-25<span id="group"></span></p>
+        <p>ПІБ: Тараненко Аліна Олександрівна<span id="fullName"></span></p>
+        <p>Варіант студента: 17<span id="studentVariant"></span></p>
+    </header>
+
+    <h2>Таблиця завдань</h2>
+    <table>
+        <tr>
+            <th>Опис завдання</th>
+            <th>Запустити скрипт</th>
+        </tr>
+        <tr>
+            <td>1. Створити об’єкт «Факультет» з властивостями «Назва», «телефон».</td>
+            <td>
+                <button onclick="runTask1()">Виконати</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2. Створити об’єкт «Група» з методами для додавання, зміни та видалення даних.</td>
+            <td>
+                <button onclick="runTask2()">Виконати</button>
+            </td>
+        </tr>
+        <tr>
+            <td>3. Реалізувати копіювання властивостей і методів між об'єктами "Факультет" і "Група".</td>
+            <td>
+                <button onclick="runTask3()">Виконати</button>
+            </td>
+        </tr>
+        <tr>
+            <td>4. Додати в прототип об'єкту "Група" метод "Показати дані".</td>
+            <td>
+                <button onclick="runTask4()">Виконати</button>
+            </td>
+        </tr>
+        <tr>
+            <td>5. Створити об'єкт "Сесія" і наслідувати властивості та методи об'єкту "Група" з додатковими
+                властивостями та методами.</td>
+            <td>
+                <button onclick="runTask5()">Виконати</button>
+            </td>
+        </tr>
+        <tr>
+            <td>6. Реалізувати класи "ГрупаКлас" і "СесіяКлас" з успадкуванням методів та властивостей.</td>
+            <td>
+                <button onclick="runTask6()">Виконати</button>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+body {
+    font-family: "Courier New", monospace;
+    text-align: center;
+    margin: 0;
+    background-color: rgb(42, 35, 44);
+    color: white;
+}
+
+h1
+{
+    font-family: "Courier New", monospace;
+    color: white;
+}
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #372b3a;
+    color: #000;
+    font-size: 18px;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 15px;
+    font-size: 20px;
+}
+
+/* Основний стиль для кнопок */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4f345c;
+    color: #ecd5e9;
+    border: 1px solid #dbc5d8;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Courier New", monospace;
+  }
+  
+  /* Змінені стилі при наведенні на кнопку */
+  button:hover {
+    background-color: #b681a8;
+    color: #ffffff;
+  }
+  
