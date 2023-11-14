@@ -1,216 +1,214 @@
 function Task1() {
     // Створення об'єкта "Співробітник"
-    var worker = {
-        Прізвище: 'Зубенко',
-        Імя: 'Міхаїл',
-        Стать: 'чоловіча',
-        Вік: 50
+    var employee = {
+        LastName: 'Зубенко',
+        FirstName: 'Міхаїл',
+        Gender: 'чоловічий',
+        Age: 50
     };
     
-    // Відображення результату
-    alert("Прізвище: " + worker.Прізвище + "\nІм'я: " + worker.Імя + "\nСтать: " + worker.Стать + "\nВік: " + worker.Вік);
+     // Виведення результату
+    alert("Прізвище: " + employee.LastName + "\nІм'я: " + employee.FirstName + "\nстать: " + employee.Gender + "\nвік: " + employee.Age);
 }
 
 function Task2() {
-    // Створення об'єкта "Зарплата" з властивостями
+     // Створення об'єкта "Зарплата" з властивостями
     var salary = {
-        Посада: "",
-        Ставка: 0,
+        Position: "",
+        Rate: 0,
     
         // Метод для порахування зарплати
-        порахуватиЗарплату: function () {
-            return "Зарплата: " + this.Ставка;
+        calculateSalary: function () {
+            return "Ставка: " + this.Rate;
         },
     
         // Метод для зміни ставки
-        змінитиСтавку: function (новаСтавка) {
-            this.Ставка = новаСтавка;
-            return "Ставка змінена на " + новаСтавка;
+        changeRate: function (newRate) {
+            this.Rate = newRate;
+            return "Ставку змінено на " + newRate;
         },
     
-        // Метод для виведення інформації
-        вивестиІнформацію: function () {
-            return "Посада: " + this.Посада + "\nСтавка: " + this.Ставка;
+         // Метод для виведення інформації
+        displayInformation: function () {
+            return "Посада: " + this.Position + "\nСтавка: " + this.Rate;
         }
     };
 
-    salary.Посада = "Мафіознік";
-    salary.Ставка = 1000;
+    salary.Position = "Мафіознік";
+    salary.Rate = 1000;
 
-    alert(salary.порахуватиЗарплату());
-    alert(salary.змінитиСтавку(1200));
-    alert(salary.вивестиІнформацію());
+    alert(salary.calculateSalary());
+    alert(salary.changeRate(1200));
+    alert(salary.displayInformation());
 }
 
 function Task3() {
     // Створення об'єкта "Співробітник"
-var worker = {
-    Прізвище: 'Зубенко',
-    Імя: 'Міхаїл',
-    Стать: 'чоловіча',
-    Вік: 50
-};
+    var employee = {
+        LastName: 'Зубенко',
+        FirstName: 'Міхаїл',
+        Gender: 'чоловічий',
+        Age: 50
+    };
 
-// Створення об'єкта "Зарплата"
-var salary = {
-    Посада: "Мафіознік",
-    Ставка: 200,
+    // Створення об'єкта "Зарплата"
+    var salary = {
+        Position: "Мафіознік",
+        Rate: 200,
 
-    // Метод для порахування зарплати
-    порахуватиЗарплату: function () {
-        return "Зарплата: " + this.Ставка;
-    },
+        // Метод для порахування зарплати
+        calculateSalary: function () {
+            return "Ставка: " + this.Rate;
+        },
 
-    // Метод для зміни ставки
-    змінитиСтавку: function (новаСтавка) {
-        this.Ставка = новаСтавка;
-        return "Ставка змінена на " + новаСтавка;
-    },
+        // Метод для зміни ставки
+        changeRate: function (newRate) {
+            this.Rate = newRate;
+            return "Ставку змінено на " + newRate;
+        },
 
-    // Метод для виведення інформації
-    вивестиІнформацію: function () {
-        return "Посада: " + this.Посада + "\nСтавка: " + this.Ставка;
+        // Метод для виведення інформації
+        displayInformation: function () {
+            return "Посада: " + this.Position + "\nСтавка: " + this.Rate;
+        }
+    };
+
+    // Копіювання властивостей і методів від "Співробітник" до "Зарплата"
+    for (var key in employee) {
+        if (employee.hasOwnProperty(key)) {
+            salary[key] = employee[key];
+        }
     }
-};
-
-// Копіювання властивостей і методів від "Співробітник" до "Зарплата"
-for (var key in worker) {
-    if (worker.hasOwnProperty(key)) {
-        salary[key] = worker[key];
-    }
-}
-    alert("Об'єкт 'Зарплата' після копіювання властивостей та методів з 'Співробітник':\nПосада: " + salary.Посада + "\nСтавка: " + salary.Ставка + "\nПрізвище: " + salary.Прізвище + "\nІм'я: " + salary.Імя + "\nСтать: " + salary.Стать + "\nВік: " + salary.Вік);
-
+    alert("Об'єкт 'Зарплата' після копіювання властивостей та методів з 'Співробітник':\nПосада: " + salary.Position + "\nСтавка: " + salary.Rate + "\nПрізвище: " + salary.LastName + "\nІм'я: " + salary.FirstName + "\nстать: " + salary.Gender + "\nвік: " + salary.Age);
 }
 
 function Task4() {
-    let worker1 = Task1();
+    let employee1 = Task1();
     // Додавання методу "Показати дані" до прототипу об'єкта "Співробітник"
-    worker1.prototype.ПоказатиДані = function () {
-        return "Прізвище: " + this.Прізвище + "\nІм'я: " + this.Імя + "\nСтать: " + this.Стать + "\nВік: " + this.Вік;
+    employee1.prototype.ShowData = function () {
+        return "Прізвище: " + this.LastName + "\nІм'я: " + this.FirstName + "\nстать: " + this.Gender + "\nвік: " + this.Age;
     };
     
-    alert(worker.ПоказатиДані());
-  
+    alert(employee1.ShowData());
 }
 
 function Task5() {
-    // Оголошення конструктора для об'єкту "Співробітник"
-function Співробітник(прізвище, імя, стать, вік) {
-    this.Прізвище = прізвище;
-    this.Імя = імя;
-    this.Стать = стать;
-    this.Вік = вік;
-}
+     // Оголошення конструктора для об'єкту "Співробітник"
+    function Employee(lastName, firstName, gender, age) {
+        this.LastName = lastName;
+        this.FirstName = firstName;
+        this.Gender = gender;
+        this.Age = age;
+    }
 
-// Метод "Показати дані" для об'єкту "Співробітник"
-Співробітник.prototype.ПоказатиДані = function () {
-    return "Прізвище: " + this.Прізвище + "\nІм'я: " + this.Імя + "\nСтать: " + this.Стать + "\nВік: " + this.Вік;
-};
+    // Метод "Показати дані" для об'єкту "Співробітник"
+    Employee.prototype.ShowData = function () {
+        return "Прізвище: " + this.LastName + "\nІм'я: " + this.FirstName + "\nстать: " + this.Gender + "\nвік: " + this.Age;
+    };
 
-// Оголошення конструктора для об'єкту "Керівник" з використанням наслідування
-function Керівник(прізвище, імя, стать, вік, відділ) {
-    // Виклик конструктора об'єкту "Співробітник" для успадкування властивостей
-    Співробітник.call(this, прізвище, імя, стать, вік);
-    
-    // Додавання власної властивості "Відділ" до об'єкту "Керівник"
-    this.Відділ = відділ;
-}
+    // Оголошення конструктора для об'єкту "Керівник" з використанням успадкування
+    function Manager(lastName, firstName, gender, age, department) {
+       // Виклик конструктора об'єкту "Співробітник" для успадкування властивостей
+        Employee.call(this, lastName, firstName, gender, age);
+        // Додавання власної властивості "Відділ" до об'єкту "Керівник"
+        this.Department = department;
+    }
 
-// Наслідування прототипу об'єкту "Співробітник" для об'єкту "Керівник"
-Керівник.prototype = Object.create(Співробітник.prototype);
+    // Наслідування прототипу об'єкту "Співробітник" для об'єкту "Керівник"
+    Manager.prototype = Object.create(Employee.prototype);
 
-// Перевизначення методу "Показати дані" для об'єкту "Керівник"
-Керівник.prototype.ПоказатиДані = function () {
-    // Виклик оригінального методу для об'єкту "Співробітник"
-    var базовийРезультат = Співробітник.prototype.ПоказатиДані.call(this);
-    // Додавання власної інформації про відділ
-    return базовийРезультат + "\nВідділ: " + this.Відділ;
-};
+   // Перевизначення методу "Показати дані" для об'єкту "Керівник"
+    Manager.prototype.ShowData = function () {
+        // Виклик оригінального методу для об'єкту "Співробітник"
+        var baseResult = Employee.prototype.ShowData.call(this);
+         // Додавання власної інформації про відділ
+        return baseResult + "\nВідділ: " + this.Department;
+    };
 
     // Створення об'єкта "Керівник"
-    var керівник = new Керівник('Іванов', 'Олег', 'чоловіча', 45, 'Відділ розробки');
+    var manager = new Manager('Іванов', 'Олег', 'чоловіча', 45, 'Відділ розробки');
     
     // Виведення інформації про керівника з використанням перевизначеного методу
-    alert(керівник.ПоказатиДані());
+    alert(manager.ShowData());
 }
 
 function Task6() {
     // Клас "СпівробітникКлас"
-class СпівробітникКлас {
-    constructor(прізвище, імя, стать, вік) {
-        this._прізвище = прізвище;
-        this._ім_я = імя;
-        this._стать = стать;
-        this._вік = вік;
+    class EmployeeClass {
+        constructor(lastName, firstName, gender, age) {
+            this._lastName = lastName;
+            this._firstName = firstName;
+            this._gender = gender;
+            this._age = age;
+        }
+
+        // Геттери та сеттери для властивостей
+        get lastName() {
+            return this._lastName;
+        }
+
+        set lastName(value) {
+            this._lastName = value;
+        }
+
+        get firstName() {
+            return this._firstName;
+        }
+
+        set firstName(value) {
+            this._firstName = value;
+        }
+
+        get gender() {
+            return this._gender;
+        }
+
+        set gender(value) {
+            this._gender = value;
+        }
+
+        get age() {
+            return this._age;
+        }
+
+        set age(value) {
+            this._age = value;
+        }
+
+        // Метод "Показати дані"
+        showData() {
+            return `Прізвище: ${this._lastName}\nІм'я: ${this._firstName}\nстать: ${this._gender}\nвік: ${this._age}`;
+        }
     }
 
-    // Геттери та сеттери для властивостей
-    get прізвище() {
-        return this._прізвище;
+    // Клас "КерівникКлас", який успадковує від "СпівробітникКлас"
+    class ManagerClass extends EmployeeClass {
+        constructor(lastName, firstName, gender, age, department) {
+            // Виклик конструктора батьківського класу
+            super(lastName, firstName, gender, age);
+            this._department = department;
+        }
+
+       // Геттер та сеттер для властивості "Відділ"
+        get department() {
+            return this._department;
+        }
+
+        set department(value) {
+            this._department = value;
+        }
+
+         // Перевизначений метод "Показати дані" для класу "КерівникКлас"
+        showData() {
+            // Виклик методу батьківського класу за допомогою super
+            const baseResult = super.showData();
+            // Adding its own information about the department
+            return `${baseResult}\nВідділ: ${this._department}`;
+        }
     }
 
-    set прізвище(value) {
-        this._прізвище = value;
-    }
-
-    get ім_я() {
-        return this._ім_я;
-    }
-
-    set ім_я(value) {
-        this._ім_я = value;
-    }
-
-    get стать() {
-        return this._стать;
-    }
-
-    set стать(value) {
-        this._стать = value;
-    }
-
-    get вік() {
-        return this._вік;
-    }
-
-    set вік(value) {
-        this._вік = value;
-    }
-
-    // Метод "Показати дані"
-    показатиДані() {
-        return `Прізвище: ${this._прізвище}\nІм'я: ${this._ім_я}\nСтать: ${this._стать}\nВік: ${this._вік}`;
-    }
-}
-
-// Клас "КерівникКлас", який успадковує від "СпівробітникКлас"
-class КерівникКлас extends СпівробітникКлас {
-    constructor(прізвище, імя, стать, вік, відділ) {
-        // Виклик конструктора батьківського класу
-        super(прізвище, імя, стать, вік);
-        this._відділ = відділ;
-    }
-
-    // Геттер та сеттер для властивості "Відділ"
-    get відділ() {
-        return this._відділ;
-    }
-
-    set відділ(value) {
-        this._відділ = value;
-    }
-
-    // Перевизначений метод "Показати дані" для класу "КерівникКлас"
-    показатиДані() {
-        // Виклик методу батьківського класу за допомогою super
-        const базовийРезультат = super.показатиДані();
-        return `${базовийРезультат}\nВідділ: ${this._відділ}`;
-    }
-}
-    const керівник = new КерівникКлас('Іванов', 'Олег', 'чоловіча', 45, 'Відділ розробки');
+    const manager = new ManagerClass('Іванов', 'Олег', 'чоловіча', 45, 'Відділ розробки');
     
-    // Виведення інформації про керівника з використанням перевизначеного методу
-    alert(керівник.показатиДані());
-
+     // Виведення інформації про керівника з використанням перевизначеного методу
+    alert(manager.showData());
 }
